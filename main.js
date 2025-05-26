@@ -26,7 +26,7 @@ countries.forEach(country => {
 
         const matchingElements = document.querySelectorAll(selector);
 
-        matchingElements.forEach(el => el.computedStyleMap.fill = "#c99aff");
+        matchingElements.forEach(el => el.style.fill = "#c99aff");
     });
 
     country.addEventListener ("mouseout", function() {
@@ -146,4 +146,4 @@ closeBtn.addEventListener("click", () => {
         map.style.height = zoomValue + "vh";
 
         zoomValueOutput.innerText = zoomValue + "%";
-    });
+});
