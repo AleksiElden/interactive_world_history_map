@@ -60,6 +60,8 @@ countries.forEach(country => {
 
         }
 
+        //Mahdollinen ongelma sivu paneelin scriptissä
+
         sidePanel.classList.add("side-panel-open");
 
         fetch(`https://restcountries.com/v3.1/name/${clickedCountryName}?fullText=true`)
@@ -83,7 +85,7 @@ countries.forEach(country => {
                 areaOutput.innerHTML = formatedNumber + ` km<sup>2</sup>`;
 
                 const currencies = data[0].currencies;
-                currencyOutput.innerHTML = "";
+                currencyOutput.innerText = "";
                 Object.keys(currencies).forEach(key => {
 
                     currencyOutput.innerHTML += `<li>${currencies[key].name}</li>`
@@ -105,10 +107,10 @@ countries.forEach(country => {
                 loading.innerText = "No data to show for selected country";
                 console.error("There was a problem with the fetch operation:", error);
             });
+        });
     });
-});
     
-closeBtn.addEventListener("click", () => {
+    closeBtn.addEventListener("click", () => {
         sidePanel.classList.remove("side-panel-open");
     });
 
