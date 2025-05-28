@@ -1,7 +1,7 @@
 const map = document.querySelector("svg");
 const countries = document.querySelectorAll("path");
 const sidePanel = document.querySelector(".side-panel");
-const container = document.querySelector(".side-panel, .container");
+const container = document.querySelector(".side-panel .container");
 const closeBtn = document.querySelector(".close-btn");
 const loading = document.querySelector(".loading");
 const zoomInBtn = document.querySelector(".zoom-in");
@@ -37,7 +37,7 @@ countries.forEach(country => {
 
         const matchingElements = document.querySelectorAll(selector);
 
-        matchingElements.forEach(el => el.style.fill = "#443d3b");
+        matchingElements.forEach(el => el.style.fill = "#443d4b");
     });
 
     country.addEventListener("click", function(e) {
@@ -60,8 +60,6 @@ countries.forEach(country => {
 
         }
 
-        //Mahdollinen ongelma sivu paneelin scriptissä
-
         sidePanel.classList.add("side-panel-open");
 
         fetch(`https://restcountries.com/v3.1/name/${clickedCountryName}?fullText=true`)
@@ -74,7 +72,7 @@ countries.forEach(country => {
             return response.json();
         })
         .then(data => {
-            comsole.log(data);
+            console.log(data);
             setTimeout(() => {
 
                 countryNameOutput.innerText = data[0].name.common;

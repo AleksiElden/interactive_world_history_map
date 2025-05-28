@@ -14,7 +14,7 @@ body {
     height: 10px;
 }
 
-::-webkit-scrollbar {
+::-webkit-scrollbar-track {
     background: #2d2733;
 }
 
@@ -111,6 +111,11 @@ path:hover {
     width: 60%;
     max-width: 20em;
     margin-block: 1em;
+}
+
+.side-panel .container > ul {
+    margin-top: 2em;
+    list-style: none;
 }
 
 .side-panel .container > ul > li {
